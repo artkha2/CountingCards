@@ -5,6 +5,7 @@
 #include <ctime>
 #include <algorithm>
 #include <chrono>
+#include <numeric>
 
 using namespace std;
 using namespace std::chrono;
@@ -108,6 +109,8 @@ int main() {
     vector<string> test4 = {"apple", "banana", "cherry"}; // string array, 3 values 
     vector<int> test5 = {22}; // integer array, 1 value (edge case)  
     vector<int> test6 = {};  // empty array edge case
+    vector<int> test7(1000) ; // integer array, 1000 values
+    iota(begin(test7), end(test7), 0); // Fill with 0, 1, ..., 999.
 
     test_algs(test1, 10000);
     test_algs(test2, 10000);
@@ -115,6 +118,7 @@ int main() {
     test_algs(test4, 10000);
     test_algs(test5, 10000);
     test_algs(test6, 10000);
+    test_algs(test7, 10000);
 
     return 0;
 }
