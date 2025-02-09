@@ -20,7 +20,8 @@ template<typename T>
 vector<T> bad_shuffle(vector<T> vec){
     int n = static_cast<int>(vec.size());
     const int sz = static_cast<int>(vec.size());
-    vector<bool> shuffled (n,false); // keep track of which elements have already been shuffled
+    // keep track of which elements have already been shuffled
+    bool shuffled[n] = {false};  // All elements initialized to false
     // shuffled[i] is true if element vec[i] has already been shuffled, false otherwise
     // Another approach would be to simulate deletion by replacing that element with a flag value (like -1) in place if it was shuffled,
     // but -1 or any other flag value we choose could be a valid element, so this doesn't work
